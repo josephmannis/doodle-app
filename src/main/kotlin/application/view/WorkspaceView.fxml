@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import tornadofx.ListMenu?>
+<?import tornadofx.ListMenuItem?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.view.WorkspaceView"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <left>
+        <VBox>
+            <ListMenu >
+            </ListMenu>
+        </VBox>
+    </left>
+
+    <center>
+        <Canvas fx:id="canvas" width="600" height="600"/>
+    </center>
+
+    <right>
+
+    </right>
+
+</BorderPane>

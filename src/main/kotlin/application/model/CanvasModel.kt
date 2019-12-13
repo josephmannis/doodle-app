@@ -1,5 +1,6 @@
 package application.model
 
+import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.geometry.Point2D
 import javafx.scene.paint.Color
@@ -15,46 +16,17 @@ interface CanvasType {
     fun clearCanvas()
 }
 
-//class CanvasModel : CanvasType {
-//    private var canvasElements = SimpleListProperty<ShapeModel>()
-//    private var currentTool = ToolType.PENCIL
-//    private var currentFill = FillType.BLACK
-//    private var currentStrokeWidth = 10.px
-//
-//    override fun changeColor(fill: FillType) {
-//        currentFill = fill
-//    }
-//
-//    override fun changeTool(tool: ToolType) {
-//        currentTool = tool
-//    }
-//
-//    override fun changeStroke(width: Double) {
-//        if (width > 0 && width < 150) {
-//            currentStrokeWidth = width.px
-//        }
-//    }
-//
-//    override fun addCanvasElement(shape: Shape, point2D: Point2D) {
-//        canvasElements.add(shape)
-//    }
-//
-//    override fun clearCanvas() {
-//        canvasElements = SimpleListProperty()
-//    }
-//}
 
-//class CanvasViewModel : ItemViewModel<CanvasModel>() {
-//
-//}
+data class ShapeModel(val shape: Shape, val position: Point, val color: Color)
 
-data class ShapeModel(val shape: Shape, val position: Point2D)
+data class Point(val x: Double, val y: Double)
 
 enum class ToolType {
     PENCIL,
     ERASER,
     SQUARE,
-    CIRCLE
+    CIRCLE,
+    LINE
 }
 
 enum class FillType(color: Color) {
